@@ -4,8 +4,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-# REMPLACE CECI par ton URL Webhook Discord (dans les paramètres de ton salon Discord)
-DISCORD_WEBHOOK_URL = "TON_URL_WEBHOOK_ICI"
+DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
 
 @app.route('/')
 def index():

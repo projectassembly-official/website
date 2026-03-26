@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>V.E.X. - Gravure Personnalisée</title>
+    <style>
+        body { background: #0f0f0f; color: white; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .box { background: #1a1a1a; padding: 40px; border-radius: 15px; border: 2px solid #ff9800; text-align: center; box-shadow: 0 0 20px rgba(255, 152, 0, 0.2); }
+        input { padding: 12px; width: 250px; border-radius: 5px; border: none; margin-bottom: 20px; font-size: 16px; }
+        button { background: #ff9800; color: black; border: none; padding: 12px 25px; border-radius: 5px; font-weight: bold; cursor: pointer; }
+        .warning { color: #ff5252; font-size: 12px; margin-top: 15px; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>🛠️ Projet V.E.X.</h1>
+        <p>Entrez le nom pour votre plaque en cuivre :</p>
+        <form action="/submit-name" method="POST">
+            <input type="text" name="nom" placeholder="Ton nom ici..." required maxlength="20">
+            <br>
+            <button type="submit">VALIDER LA GRAVURE</button>
+        </form>
+        <p class="warning">⚠️ Une seule chance. Vérifie bien l'orthographe !</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V.E.X. - Gravure Personnalisée</title>
+    <style>
+        body { 
+            background: #0f0f0f; 
+            color: white; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+        }
+        .box { 
+            background: #1a1a1a; 
+            padding: 40px; 
+            border-radius: 15px; 
+            border: 2px solid #ff9800; 
+            text-align: center; 
+            box-shadow: 0 0 30px rgba(255, 152, 0, 0.15);
+            max-width: 400px;
+        }
+        h1 { color: #ff9800; margin-bottom: 10px; }
+        .metal-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            background: #333;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            border: 1px solid #555;
+        }
+        input { 
+            padding: 15px; 
+            width: 80%; 
+            border-radius: 8px; 
+            border: 1px solid #444; 
+            background: #222;
+            color: white;
+            margin-bottom: 25px; 
+            font-size: 18px; 
+            text-align: center;
+        }
+        input:focus {
+            outline: none;
+            border-color: #ff9800;
+            box-shadow: 0 0 10px rgba(255, 152, 0, 0.5);
+        }
+        button { 
+            background: #ff9800; 
+            color: black; 
+            border: none; 
+            padding: 15px 35px; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            font-size: 16px;
+            cursor: pointer; 
+            transition: transform 0.2s, background 0.2s;
+        }
+        button:hover { 
+            background: #e68a00; 
+            transform: scale(1.05); 
+        }
+        .warning { 
+            color: #ff5252; 
+            font-size: 13px; 
+            margin-top: 20px; 
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>🛠️ Projet V.E.X.</h1>
+        <div class="metal-badge">Option : {{ metal }}</div>
+        
+        <p>Entrez le nom exact à graver sur votre plaque :</p>
+        
+        <form action="/submit-name/{{ metal }}" method="POST">
+            <input type="text" name="nom" placeholder="Votre nom ici..." required maxlength="25">
+            <br>
+            <button type="submit">VALIDER LA COMMANDE</button>
+        </form>
+        
+        <p class="warning">⚠️ Vérifiez bien l'orthographe avant de valider. Une seule plaque sera produite par achat.</p>
+    </div>
+</body>
+</html>
